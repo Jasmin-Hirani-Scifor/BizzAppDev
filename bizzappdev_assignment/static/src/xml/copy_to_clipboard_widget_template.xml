@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="copy_to_clipboard_widget_template" name="Copy To Clipboard Widget">
+        <t t-name="CopyToClipboardWidgetTemplate">
+            <div class="o_field_widget o_field_char">
+                <span t-esc="widget.value" class="o_field_text"/>
+                <button type="button" class="o_copy_clipboard btn btn-sm btn-secondary" style="margin-left: 5px;">
+                    <i class="fa fa-copy"/>
+                    Copy
+                </button>
+            </div>
+        </t>
+    </template>
+</odoo>

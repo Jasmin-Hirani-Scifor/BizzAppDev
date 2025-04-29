@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Point 14: Modify Default Search Filter -->
+
+    <record id="sale.action_quotations_with_onboarding" model="ir.actions.act_window">
+        <field name="context">{'search_default_filter_confirmed_done': 1}</field>
+    </record>
+
+    <record id="sale_order_view_search_inherit_bizzappdev" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.bizzappdev</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='my_quotation']" position="after">
+                <filter name="filter_confirmed_done" string="Sales Orders (Confirmed/Done)"
+                        domain="[('state', 'in', ['sale', 'done'])]"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
